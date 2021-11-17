@@ -4,6 +4,16 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 # include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
+
+explore: fato_extrato {
+  join: dim_parceiro {
+    type: inner
+    relationship: many_to_one
+    sql_on: ${fato_extrato.chave_parceiro} = ${dim_parceiro.chave_parceiro} ;;
+  }
+}
+
+
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
 #

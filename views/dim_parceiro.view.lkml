@@ -5,6 +5,7 @@ view: dim_parceiro {
   dimension: chave_parceiro {
     type: number
     description: "Chave única da tabela"
+    primary_key: yes
     sql: ${TABLE}.ChaveParceiro ;;
   }
 

@@ -41,6 +41,7 @@ view: fato_extrato {
   dimension: chave_fato_extrato {
     type: number
     description: "Surrogate key da tabela"
+    primary_key: yes
     sql: ${TABLE}.ChaveFatoExtrato ;;
   }
 
@@ -384,4 +385,21 @@ view: fato_extrato {
     type: count
     drill_fields: []
   }
+
+  measure: qtd_cliente {
+    type: count_distinct
+    sql: ${chave_cliente} ;;
+  }
+
+  measure: qtd_tickets  {
+    type: count_distinct
+    sql: ${chave_fato_extrato} ;;
+  }
+
+  measure: faturamento {
+    type: sum
+    sql: ${valor_ticket_total} ;;
+  }
+
+
 }

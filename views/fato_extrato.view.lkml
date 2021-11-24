@@ -384,7 +384,7 @@ view: fato_extrato {
   dimension: DataTransacao {
     type: date
     description: "DataCheckOut em formato DATE com fuso corrigido "
-    sql: DATE(${TABLE}.DataCheckOut,"America/Sao_Paulo");;
+    sql: DATE(${TABLE}.DataCheckOut,"America/Santiago");;
   }
 
   measure: count {

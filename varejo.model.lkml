@@ -33,6 +33,8 @@ explore: frequencia_cliente {
 
 explore: fato_extrato {}
 
+explore: painel_cb_safras_bv {}
+
 # explore: media {}
 
 # explore: frequencia_cliente {}

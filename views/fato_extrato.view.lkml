@@ -402,6 +402,11 @@ view: fato_extrato {
     sql: ${chave_fato_extrato} ;;
   }
 
+  measure: media_parceiro {
+    type: number
+    sql: ${qtd_tickets}/${qtd_cliente} ;;
+  }
+
   measure: faturamento {
     type: sum
     sql: ${valor_ticket_total} ;;

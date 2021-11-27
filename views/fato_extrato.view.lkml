@@ -412,5 +412,10 @@ view: fato_extrato {
     sql: ${valor_ticket_total} ;;
   }
 
+  set: clientes {
+    fields: [chave_cliente]
+
+  }
+
 
 }

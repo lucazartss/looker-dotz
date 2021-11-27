@@ -21,7 +21,10 @@ view: base_final {
     description: "Data da saida (em casos como reservas) ou da compra da transação"
     type: date_month
   }
-  dimension: nome_parceiro {}
+  dimension: nome_parceiro {
+    type: string
+    sql: ${TABLE}.nomeparceiro ;;
+  }
   dimension: frequencia {
     type: number
   }

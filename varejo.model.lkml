@@ -33,6 +33,8 @@ explore: frequencia_cliente {
 
 explore: fato_extrato {}
 
+explore: dim_cliente{}
+
 # explore: media {}
 
 # explore: frequencia_cliente {}

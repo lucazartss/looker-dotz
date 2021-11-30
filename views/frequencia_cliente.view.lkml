@@ -8,6 +8,7 @@ view: frequencia_cliente {
       column: chave_cliente {}
       column: nomeparceiro { field: cat_filial_parceiros_base_completa.nomeparceiro }
       column: data_check_out_month {}
+      column: data_check_out_date {}
       column: qtd_tickets {}
       filters: {
         field: cte.codigo_sub_tipo_promocao
@@ -48,6 +49,9 @@ view: frequencia_cliente {
   dimension: frequencia {
     sql: ${TABLE}.qtd_tickets ;;
     type: number
+  }
+
+  dimension: data_check_out_date {
   }
 
   dimension: classificacao {

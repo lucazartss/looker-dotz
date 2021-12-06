@@ -36,6 +36,8 @@ explore: fato_extrato {}
 explore: dim_cliente{}
 explore: painel_cb_safras_bv {}
 
+explore: dim_origem_troca {}
+
 # explore: media {}
 
 # explore: frequencia_cliente {}

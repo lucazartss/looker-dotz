@@ -1,6 +1,6 @@
 view: tab_projeto_varejo_1_insights {
   derived_table: {
-    sql: SELECT * FROM `dotzcloud-datalabs-analytics.ANALYTICS_PROD.TAB_PROJETO_VAREJO_1_INSIGHTS` LIMIT 10
+    sql: SELECT * FROM `dotzcloud-datalabs-analytics.ANALYTICS_PROD.TAB_PROJETO_VAREJO_1_INSIGHTS`
       ;;
   }
 

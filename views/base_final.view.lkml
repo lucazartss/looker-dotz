@@ -6,6 +6,7 @@ view: base_final {
     explore_source: frequencia_cliente {
       column: chave_cliente {}
       column: data_check_out_month {}
+      column: data_check_out_date {}
       column: nomeparceiro {}
       column: frequencia {}
       column: media_parceiro { field: media.media_parceiro }
@@ -21,7 +22,15 @@ view: base_final {
     description: "Data da saida (em casos como reservas) ou da compra da transação"
     type: date_month
   }
-  dimension: nome_parceiro {}
+
+  dimension: data_check_out_date{
+    type: date
+  }
+
+  dimension: nome_parceiro {
+    type: string
+    sql: ${TABLE}.nomeparceiro ;;
+  }
   dimension: frequencia {
     type: number
   }

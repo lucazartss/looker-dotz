@@ -4,12 +4,12 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 # include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
-datagroup: test_datagroup {
-  sql_trigger: SELECT max(id) FROM my_tablename ;;
-  max_cache_age: "24 hours"
-  label: "ETL ID added"
-  description: "Triggered when new ID is added to ETL log"
-}
+# datagroup: test_datagroup {
+#   sql_trigger: SELECT max(id) FROM my_tablename ;;
+#   max_cache_age: "24 hours"
+#   label: "ETL ID added"
+#   description: "Triggered when new ID is added to ETL log"
+# }
 
 explore: base_final {
 }
@@ -32,8 +32,10 @@ explore: frequencia_cliente {
 }
 
 explore: fato_extrato {}
-
+explore: dim_cliente{}
 explore: painel_cb_safras_bv {}
+explore: dim_origem_troca {}
+explore: tab_projeto_varejo_1_insights {}
 
 explore: analise_clientes_produto_consolidado {}
 

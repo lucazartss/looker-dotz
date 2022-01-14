@@ -35,6 +35,8 @@ explore: fato_extrato {}
 
 explore: painel_cb_safras_bv {}
 
+explore: analise_clientes_produto_consolidado {}
+
 # explore: media {}
 
 # explore: frequencia_cliente {}

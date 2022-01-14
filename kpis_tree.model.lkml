@@ -20,5 +20,4 @@ include: "/views/*.view.lkml"
 #   }
 # }
 
-explore: fatocontadotz {}
-explore: dim_cliente {}
+explore: kpitree_contadotz_novomodelo {}

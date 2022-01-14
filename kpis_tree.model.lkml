@@ -21,3 +21,4 @@ include: "/views/*.view.lkml"
 # }
 
 explore: fatocontadotz {}
+explore: dim_cliente {}

@@ -21,3 +21,4 @@ include: "/views/*.view.lkml"
 # }
 
 explore: kpitree_contadotz_novomodelo {}
+explore: painel_kpi_tree_faturamento_macro {}

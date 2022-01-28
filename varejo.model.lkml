@@ -36,6 +36,7 @@ explore: dim_cliente{}
 explore: painel_cb_safras_bv {}
 explore: dim_origem_troca {}
 explore: tab_projeto_varejo_1_insights {}
+explore: base_sku_final5 {}
 
 explore: analise_clientes_produto_consolidado {}
 

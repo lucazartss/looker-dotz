@@ -1,6 +1,6 @@
 view: tabela_dash_varejo {
   derived_table: {
-    sql: SELECT * FROM `dotzcloud-datalabs-analytics.ANALYTICS_PROD.TABELA_DASH_VAREJO` LIMIT 10
+    sql: SELECT * FROM `dotzcloud-datalabs-analytics.ANALYTICS_PROD.TABELA_DASH_VAREJO`
       ;;
   }
 

@@ -20,5 +20,5 @@ include: "/views/*.view.lkml"
 #   }
 # }
 
-explore: fatocontadotz {}
-explore: dim_cliente {}
+explore: kpitree_contadotz_novomodelo {}
+explore: painel_kpi_tree_faturamento_macro {}

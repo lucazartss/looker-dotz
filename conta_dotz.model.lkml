@@ -21,3 +21,4 @@ include: "/views/*.view.lkml" # include all views in the views/ folder in this p
 
 explore: fatocontadotz {}
 explore: transacoes_dotzpay {}
+explore: cockpit_onboarding {}

@@ -143,7 +143,7 @@ view: transacoes_dotzpay {
       {% else %}
         sum(${TABLE}.Valor)
       {% endif %} ;;
-    value_format: "0.000,,,\" B\"[>999999999];0.000, \" K\"[<1000000];0.000,,\" M\"[<999999999]"
+    value_format: "#,##0.00"
   }
 
 

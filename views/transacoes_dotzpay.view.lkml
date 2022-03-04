@@ -120,4 +120,8 @@ view: transacoes_dotzpay {
       value: "qtd_clientes"
     }
   }
+
+  measure: Dado_dinamico {
+    sql: ${TABLE}.{tipo_dado} ;;
+  }
 }

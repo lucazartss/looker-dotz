@@ -129,16 +129,13 @@ view: transacoes_dotzpay {
   measure: dado_dinamico {
     sql:
       {% if Tipo_dado._parameter_value == "Valor" %}
-        --sum(${TABLE}.Valor)
         ${TABLE}.vl_faturamento
       {% elsif Tipo_dado._parameter_value == "ContagemReversao1" %}
-        --sum(${TABLE}.ContagemReversao1)
         ${TABLE}.qtd_transacoes
       {% elsif Tipo_dado._parameter_value == "ID_CONTA" %}
-        --count(distinct(${TABLE}.ID_CONTA))
         ${TABLE}.qtd_clientes
       {% else %}
-        --sum(${TABLE}.Valor)
+        ${TABLE}.vl_faturamento
       {% endif %} ;;
   }
 

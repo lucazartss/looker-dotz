@@ -92,4 +92,32 @@ view: transacoes_dotzpay {
       receita
     ]
   }
+
+  measure: vl_faturamento {
+    sql: sum(${TABLE}.Valor) ;;
+  }
+
+  measure: qtd_transacoes {
+    sql: sum(${TABLE}.ContagemReversao1) ;;
+  }
+
+  measure: qtd_clientes {
+    sql: count(distinct(${TABLE}.ID_CONTA)) ;;
+  }
+
+  parameter: Tipo_dado {
+    type: unquoted
+    allowed_value: {
+      label: "Faturamento"
+      value: "vl_faturamento"
+    }
+    allowed_value: {
+      label: "Transações"
+      value: "qtd_transacoes"
+    }
+    allowed_value: {
+      label: "Clientes"
+      value: "qtd_clientes"
+    }
+  }
 }

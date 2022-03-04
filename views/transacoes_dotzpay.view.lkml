@@ -119,6 +119,10 @@ view: transacoes_dotzpay {
       label: "Clientes"
       value: "ID_CONTA"
     }
+    allowed_value: {
+      label: "Receita"
+      value: "Receita"
+    }
   }
 
   #measure: dado_dinamico{
@@ -134,6 +138,8 @@ view: transacoes_dotzpay {
         sum(${TABLE}.ContagemReversao1)
       {% elsif Tipo_dado._parameter_value == "ID_CONTA" %}
         count(distinct(${TABLE}.ID_CONTA))
+      {% elsif Tipo_dado._parameter_value == "Receita" %}
+        sum(${TABLE}.Receita)
       {% else %}
         sum(${TABLE}.Valor)
       {% endif %} ;;

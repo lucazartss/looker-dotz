@@ -109,19 +109,20 @@ view: transacoes_dotzpay {
     type: unquoted
     allowed_value: {
       label: "Faturamento"
-      value: "Vl Faturamento"
+      value: "Valor"
     }
     allowed_value: {
       label: "Transações"
-      value: "Qtd Transacoes"
+      value: "ContagemReversao1"
     }
     allowed_value: {
       label: "Clientes"
-      value: "Qtd Clientes"
+      value: "ID_CONTA"
     }
   }
 
   measure: dado_dinamico{
+    type: sum
     sql: ${TABLE}.{% parameter Tipo_dado %} ;;
   }
 

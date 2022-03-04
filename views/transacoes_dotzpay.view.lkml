@@ -109,15 +109,15 @@ view: transacoes_dotzpay {
     type: unquoted
     allowed_value: {
       label: "Faturamento"
-      value: "Valor"
+      value: "Faturamento"
     }
     allowed_value: {
       label: "Transações"
-      value: "ContagemReversao1"
+      value: "Transações"
     }
     allowed_value: {
       label: "Clientes"
-      value: "ID_CONTA"
+      value: "Clientes"
     }
     allowed_value: {
       label: "Receita"
@@ -132,11 +132,11 @@ view: transacoes_dotzpay {
 
   measure: dado_dinamico {
     sql:
-      {% if Tipo_dado._parameter_value == "Valor" %}
+      {% if Tipo_dado._parameter_value == "Faturamento" %}
         sum(${TABLE}.Valor)
-      {% elsif Tipo_dado._parameter_value == "ContagemReversao1" %}
+      {% elsif Tipo_dado._parameter_value == "Transações" %}
         sum(${TABLE}.ContagemReversao1)
-      {% elsif Tipo_dado._parameter_value == "ID_CONTA" %}
+      {% elsif Tipo_dado._parameter_value == "Clientes" %}
         count(distinct(${TABLE}.ID_CONTA))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         sum(${TABLE}.Receita)

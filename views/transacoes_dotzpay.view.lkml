@@ -113,7 +113,7 @@ view: transacoes_dotzpay {
     }
     allowed_value: {
       label: "Transações"
-      value: "Transações"
+      value: "Transacoes"
     }
     allowed_value: {
       label: "Clientes"
@@ -134,7 +134,7 @@ view: transacoes_dotzpay {
     sql:
       {% if Tipo_dado._parameter_value == "Faturamento" %}
         sum(${TABLE}.Valor)
-      {% elsif Tipo_dado._parameter_value == "Transações" %}
+      {% elsif Tipo_dado._parameter_value == "Transacoes" %}
         sum(${TABLE}.ContagemReversao1)
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
         count(distinct(${TABLE}.ID_CONTA))

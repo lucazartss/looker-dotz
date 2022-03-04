@@ -121,8 +121,8 @@ view: transacoes_dotzpay {
     }
   }
 
-  measure: Dado_dinamico {
-    type: sum
-    sql: ${TABLE}.{tipo_dado} ;;
+  measure: dado_dinamico{
+    sql: ${TABLE}.{% parameter Tipo_dado %} ;;
   }
-}
+
+  }

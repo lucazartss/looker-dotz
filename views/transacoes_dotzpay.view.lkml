@@ -112,7 +112,7 @@ view: transacoes_dotzpay {
       value: "Faturamento"
     }
     allowed_value: {
-      label: "Transacoes"
+      label: "Transações"
       value: "Transacoes"
     }
     allowed_value: {

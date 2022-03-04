@@ -130,6 +130,7 @@ view: transacoes_dotzpay {
     sql:
       {% if Tipo_dado._parameter_value == "Valor" %}
         sum(${TABLE}.Valor)
+        value_format: "R$"0.00,,"M"
       {% elsif Tipo_dado._parameter_value == "ContagemReversao1" %}
         sum(${TABLE}.ContagemReversao1)
       {% elsif Tipo_dado._parameter_value == "ID_CONTA" %}

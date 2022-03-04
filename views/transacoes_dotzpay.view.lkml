@@ -109,34 +109,35 @@ view: transacoes_dotzpay {
     type: unquoted
     allowed_value: {
       label: "Faturamento"
-      value: "vl_faturamento"
+      value: "Valor"
     }
     allowed_value: {
       label: "Transações"
-      value: "qtd_transacoes"
+      value: "ContagemReversao1"
     }
     allowed_value: {
       label: "Clientes"
-      value: "qtd_clientes"
+      value: "ID_CONTA"
     }
   }
 
-  measure: dado_dinamico{
-    type: sum
-    sql: ${TABLE}.{% parameter Tipo_dado %} ;;
-  }
-
-  #measure: dado_dinamico {
-    #sql:
-      #{% if Tipo_dado._parameter_value == "Faturamento"}
-        #${vl_faturamento}
-      #{% else if Tipo_dado._parameter_value == "Transações"}
-        #${qtd_transacoes}
-      #{% else if Tipo_dado._parameter_value == "Clientes"}
-        #${qtd_clientes}
-      #{% else %}
-      #{% endif %} ;;
+  #measure: dado_dinamico{
+  #  type: sum
+  #  sql: ${TABLE}.{% parameter Tipo_dado %} ;;
   #}
+
+  measure: dado_dinamico {
+    sql:
+      {% if Tipo_dado._parameter_value == "Valor" %}
+        sum(${TABLE}.Valor)
+      {% elsif Tipo_dado._parameter_value == "ContagemReversao1" %}
+        sum(${TABLE}.ContagemReversao1)
+      {% elsif Tipo_dado._parameter_value == "ID_CONTA" %}
+        count(distinct(${TABLE}.ID_CONTA))
+      {% else %}
+        ""
+      {% endif %} ;;
+  }
 
 
   }

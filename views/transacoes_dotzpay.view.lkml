@@ -105,6 +105,15 @@ view: transacoes_dotzpay {
     sql: count(distinct(${TABLE}.ID_CONTA)) ;;
   }
 
+  measure: ticket_medio_transacao {
+    sql: sum(${TABLE}.Valor)/sum(${TABLE}.ContagemReversao1) ;;
+  }
+
+  dimension: data_mes {
+    type: date
+    sql: date_trunc(${TABLE}.data, month) ;;
+  }
+
   parameter: Tipo_dado {
     type: unquoted
     allowed_value: {

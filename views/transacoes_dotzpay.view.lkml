@@ -135,7 +135,7 @@ view: transacoes_dotzpay {
       {% elsif Tipo_dado._parameter_value == "ID_CONTA" %}
         count(distinct(${TABLE}.ID_CONTA))
       {% else %}
-        ""
+        sum(${TABLE}.Valor)
       {% endif %} ;;
   }
 

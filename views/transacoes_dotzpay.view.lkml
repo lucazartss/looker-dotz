@@ -153,11 +153,11 @@ view: transacoes_dotzpay {
   parameter: Teste_data {
     type: unquoted
     allowed_value: {
-      label: "Mês atual"
+      label: "Mes atual"
       value: "Mes atual"
     }
     allowed_value: {
-      label: "Mês anterior"
+      label: "Mes anterior"
       value: "Mes anterior"
     }
   }

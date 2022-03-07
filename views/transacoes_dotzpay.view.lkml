@@ -167,7 +167,8 @@ view: transacoes_dotzpay {
     sql: {% if Teste_data._parameter_value == "Mes atual" %}
         date_trunc(${TABLE}.data, month)
         {% elsif Teste_data._parameter_value == "Mes anterior" %}
-        date_sub(date_trunc(${TABLE}.data, month), INTERVAL 1 MONTH)
+        ${TABLE}.data
+        --date_sub(date_trunc(${TABLE}.data, month), INTERVAL 1 MONTH)
         {% else %}
         date_trunc(${TABLE}.data, month)
         {% endif %}

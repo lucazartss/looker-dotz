@@ -154,21 +154,21 @@ view: transacoes_dotzpay {
     type: unquoted
     allowed_value: {
       label: "Mes atual"
-      value: "Mes atual"
+      value: "MesAtual"
     }
     allowed_value: {
       label: "Mes anterior"
-      value: "Mes anterior"
+      value: "MesAnterior"
     }
   }
 
   dimension: teste_parametro_data {
     type: date
-    sql: {% if Teste_data._parameter_value == "Mes atual" %}
+    sql: {% if Teste_data._parameter_value == "MesAtual" %}
         date_trunc(${TABLE}.data, month)
-        {% elsif Teste_data._parameter_value == "Mes anterior" %}
-        ${TABLE}.data
-        --date_sub(date_trunc(${TABLE}.data, month), INTERVAL 1 MONTH)
+        {% elsif Teste_data._parameter_value == "MesAnterior" %}
+        --${TABLE}.data
+        date_sub(date_trunc(${TABLE}.data, month), INTERVAL 1 MONTH)
         {% else %}
         date_trunc(${TABLE}.data, month)
         {% endif %}

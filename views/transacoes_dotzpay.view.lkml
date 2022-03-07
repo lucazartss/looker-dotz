@@ -129,6 +129,13 @@ view: transacoes_dotzpay {
     }
   }
 
+  dimension_group: Data_month {
+    type: time
+    timeframes:  [month]
+    datatype: date
+    sql: ${TABLE}.Data ;;
+  }
+
   #measure: dado_dinamico{
   #  type: sum
   #  sql: ${TABLE}.{% parameter Tipo_dado %} ;;

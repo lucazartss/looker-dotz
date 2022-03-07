@@ -131,7 +131,7 @@ view: transacoes_dotzpay {
 
   dimension_group: Data_month {
     type: time
-    timeframes:  [month]
+    timeframes:  [date, week, month, year]
     datatype: date
     sql: ${TABLE}.Data ;;
   }

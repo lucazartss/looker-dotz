@@ -23,3 +23,4 @@ explore: fatocontadotz {}
 explore: transacoes_dotzpay {}
 explore: cockpit_onboarding {}
 explore: base_trocas_app {}
+explore: base_saldo_conta_dotz {}

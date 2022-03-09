@@ -56,4 +56,40 @@ view: base_saldo_conta_dotz {
     type: count
     drill_fields: []
   }
+
+  parameter: Tipo_dado {
+    type: unquoted
+    allowed_value: {
+      label: "Faturamento"
+      value: "Faturamento"
+    }
+    allowed_value: {
+      label: "Transações"
+      value: "Transacoes"
+    }
+    allowed_value: {
+      label: "Clientes"
+      value: "Clientes"
+    }
+    allowed_value: {
+      label: "Receita"
+      value: "Receita"
+    }
+  }
+
+  measure: dado_dinamico {
+    sql:
+      {% if Tipo_dado._parameter_value == "Faturamento" %}
+        sum(case when ${TABLE}.SaldoDZ > 0 then ${TABLE}.SaldoDZ when ${TABLE}.SaldoReais > 0 then ${TABLE}.SaldoReais else 0 end)
+      {% elsif Tipo_dado._parameter_value == "Transacoes" %}
+        0
+      {% elsif Tipo_dado._parameter_value == "Clientes" %}
+        count(distinct(case when ${TABLE}.SaldoDZ > 0 then ${TABLE}.NuCPF when ${TABLE}.SaldoReais > 0 then ${TABLE}.NuCPF else 0 end))
+      {% elsif Tipo_dado._parameter_value == "Receita" %}
+        0
+      {% else %}
+        0
+      {% endif %} ;;
+    value_format: "#,##0.00"
+  }
 }

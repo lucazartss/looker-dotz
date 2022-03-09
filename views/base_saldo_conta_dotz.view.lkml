@@ -42,14 +42,14 @@ view: base_saldo_conta_dotz {
     sql: ${TABLE}.NuCPF ;;
   }
 
-  dimension: saldo_dz {
+  dimension: saldo {
     type: number
-    sql: ${TABLE}.SaldoDz ;;
+    sql: ${TABLE}.Saldo ;;
   }
 
-  dimension: saldo_reais {
-    type: number
-    sql: ${TABLE}.SaldoReais ;;
+  dimension: tipo_saldo {
+    type: string
+    sql: ${TABLE}.TipoSaldo ;;
   }
 
   measure: count {
@@ -80,16 +80,17 @@ view: base_saldo_conta_dotz {
   measure: dado_dinamico {
     sql:
       {% if Tipo_dado._parameter_value == "Faturamento" %}
-        sum(case when ${TABLE}.SaldoDZ > 0 then ${TABLE}.SaldoDZ when ${TABLE}.SaldoReais > 0 then ${TABLE}.SaldoReais else 0 end)
+        sum(${TABLE}.Saldo)
       {% elsif Tipo_dado._parameter_value == "Transacoes" %}
         0
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
-        count(distinct(case when ${TABLE}.SaldoDZ > 0 then ${TABLE}.NuCPF when ${TABLE}.SaldoReais > 0 then ${TABLE}.NuCPF else 0 end))
+        count(distinct(case when ${TABLE}.Saldo > 0 then ${TABLE}.NuCPF else null end))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         0
       {% else %}
-        0
+        sum(${TABLE}.QuantidadeDotzTroca)
       {% endif %} ;;
     value_format: "#,##0.00"
   }
+
 }

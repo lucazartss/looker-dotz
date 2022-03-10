@@ -67,6 +67,11 @@ view: base_trocas_app {
     sql: ${TABLE}.TipoTroca ;;
   }
 
+  dimension: id_conta {
+    type: number
+    sql: ${TABLE}.id_conta ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
@@ -111,7 +116,7 @@ view: base_trocas_app {
       {% elsif Tipo_dado._parameter_value == "Transacoes" %}
         count(distinct(${TABLE}.ChaveFatoTroca))
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
-        count(distinct(${TABLE}.ChaveCliente))
+        count(distinct(${TABLE}.id_conta))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         0
       {% else %}

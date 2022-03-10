@@ -80,7 +80,7 @@ view: transacoes_dotzpay_nao_financeiras {
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         0
       {% else %}
-        sum(${TABLE}.QuantidadeDotzTroca)
+        0
       {% endif %} ;;
     value_format: "#,##0.00"
   }

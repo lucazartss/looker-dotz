@@ -72,7 +72,7 @@ view: base_metas_payments_2022s1 {
     }
   }
 
-  measure: dado_dinamico {
+  dimension: dado_dinamico {
     sql:
       {% if Tipo_dado._parameter_value == "Mensal" %}
         DATE_TRUNC(${TABLE}.Data, month)

@@ -75,13 +75,23 @@ view: base_metas_payments_2022s1 {
   dimension: dado_dinamico {
     sql:
       {% if Tipo_dado._parameter_value == "Mensal" %}
-        DATE_TRUNC(${TABLE}.Data, month)
+        ${data_month}
+        --date(DATE_TRUNC(${TABLE}.Data, month))
       {% elsif Tipo_dado._parameter_value == "Semanal" %}
-        DATE_TRUNC(${TABLE}.Data, week)
+        ${data_week}
+        --date(DATE_TRUNC(${TABLE}.Data, week))
       {% else %}
         0
       {% endif %} ;;
-    value_format: "YYYY-MM-DD"
+    #value_format: "YYYY-MM-DD"
+  }
+
+  dimension: data_dash {
+    sql:
+      case
+        when ${TABLE}.Visao == "Mensal" then ${data_month}
+        when ${TABLE}.Visao == "Semanal" then ${data_week}
+        else null end;;
   }
 
 }

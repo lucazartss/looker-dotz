@@ -89,8 +89,8 @@ view: base_metas_payments_2022s1 {
   dimension: data_dash {
     sql:
       case
-        when ${TABLE}.Visao == "Mensal" then ${data_month}
-        when ${TABLE}.Visao == "Semanal" then ${data_week}
+        when ${TABLE}.Visao = "Mensal" then ${data_month}
+        when ${TABLE}.Visao = "Semanal" then ${data_week}
         else null end;;
   }
 

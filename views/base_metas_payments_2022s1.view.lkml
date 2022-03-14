@@ -59,4 +59,29 @@ view: base_metas_payments_2022s1 {
       variacao
     ]
   }
+
+  parameter: Tipo_dado {
+    type: unquoted
+    allowed_value: {
+      label: "Mensal"
+      value: "Mensal"
+    }
+    allowed_value: {
+      label: "Semanal"
+      value: "Semanal"
+    }
+  }
+
+  measure: dado_dinamico {
+    sql:
+      {% if Tipo_dado._parameter_value == "Mensal" %}
+        DATE_TRUNC(${TABLE}.Data, month)
+      {% elsif Tipo_dado._parameter_value == "Semanal" %}
+        DATE_TRUNC(${TABLE}.Data, week)
+      {% else %}
+        0
+      {% endif %} ;;
+    value_format: "YYYY-MM-DD"
+  }
+
 }

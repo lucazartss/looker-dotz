@@ -87,9 +87,9 @@ view: transacoes_dotzpay_nao_financeiras {
         count(distinct(${TABLE}.NuCpf))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         null
-      {% elsif Tipo_dado._parameter_value == "TPN por cliente" %}
+      {% elsif Tipo_dado._parameter_value == "TPNporcliente" %}
         sum(${TABLE}.SumTransacoes)/count(distinct(${TABLE}.NuCpf))
-      {% elsif Tipo_dado._parameter_value == "Dotz TPV" %}
+      {% elsif Tipo_dado._parameter_value == "DotzTPV" %}
         null
       {% else %}
         null

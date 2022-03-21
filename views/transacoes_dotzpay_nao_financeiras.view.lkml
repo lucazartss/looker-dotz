@@ -52,12 +52,12 @@ view: transacoes_dotzpay_nao_financeiras {
   parameter: Tipo_dado {
     type: unquoted
     allowed_value: {
-      label: "Faturamento"
-      value: "Faturamento"
+      label: "TPV"
+      value: "TPV"
     }
     allowed_value: {
-      label: "Transações"
-      value: "Transacoes"
+      label: "TPN"
+      value: "TPN"
     }
     allowed_value: {
       label: "Clientes"
@@ -67,20 +67,32 @@ view: transacoes_dotzpay_nao_financeiras {
       label: "Receita"
       value: "Receita"
     }
+    allowed_value: {
+      label: "TPN por cliente"
+      value: "TPN por cliente"
+    }
+    allowed_value: {
+      label: "Dotz TPV"
+      value: "Dotz TPV"
+    }
   }
 
   measure: dado_dinamico {
     sql:
-      {% if Tipo_dado._parameter_value == "Faturamento" %}
-        0
-      {% elsif Tipo_dado._parameter_value == "Transacoes" %}
+      {% if Tipo_dado._parameter_value == "TPV" %}
+        null
+      {% elsif Tipo_dado._parameter_value == "TPN" %}
         sum(${TABLE}.SumTransacoes)
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
         count(distinct(${TABLE}.NuCpf))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
-        0
+        null
+      {% elsif Tipo_dado._parameter_value == "TPN por cliente" %}
+        sum(${TABLE}.SumTransacoes)/count(distinct(${TABLE}.NuCpf))
+      {% elsif Tipo_dado._parameter_value == "Dotz TPV" %}
+        null
       {% else %}
-        0
+        null
       {% endif %} ;;
     value_format: "#,##0"
   }

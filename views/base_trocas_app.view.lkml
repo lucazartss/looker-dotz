@@ -92,12 +92,12 @@ view: base_trocas_app {
   parameter: Tipo_dado {
     type: unquoted
     allowed_value: {
-      label: "Faturamento"
-      value: "Faturamento"
+      label: "TPV"
+      value: "TPV"
     }
     allowed_value: {
-      label: "Transações"
-      value: "Transacoes"
+      label: "TPN"
+      value: "TPN"
     }
     allowed_value: {
       label: "Clientes"
@@ -107,20 +107,30 @@ view: base_trocas_app {
       label: "Receita"
       value: "Receita"
     }
+    allowed_value: {
+      label: "TPN por cliente"
+      value: "TPN por cliente"
+    }
+    allowed_value: {
+      label: "Dotz TPV"
+      value: "Dotz TPV"
+    }
   }
 
   measure: dado_dinamico {
     sql:
-      {% if Tipo_dado._parameter_value == "Faturamento" %}
+      {% if Tipo_dado._parameter_value == "Dotz TPV" %}
         sum(${TABLE}.QuantidadeDotzTroca)
-      {% elsif Tipo_dado._parameter_value == "Transacoes" %}
+      {% elsif Tipo_dado._parameter_value == "TPN" %}
         count(distinct(${TABLE}.ChaveFatoTroca))
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
         count(distinct(${TABLE}.id_conta))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
-        0
+        null
+      {% elsif Tipo_dado._parameter_value == "TPN por cliente" %}
+        count(distinct(${TABLE}.ChaveFatoTroca))/count(distinct(${TABLE}.id_conta))
       {% else %}
-        sum(${TABLE}.QuantidadeDotzTroca)
+        null
       {% endif %} ;;
     value_format: "#,##0"
   }

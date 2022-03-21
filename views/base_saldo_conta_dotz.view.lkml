@@ -60,12 +60,12 @@ view: base_saldo_conta_dotz {
   parameter: Tipo_dado {
     type: unquoted
     allowed_value: {
-      label: "Faturamento"
-      value: "Faturamento"
+      label: "TPV"
+      value: "TPV"
     }
     allowed_value: {
-      label: "Transações"
-      value: "Transacoes"
+      label: "TPN"
+      value: "TPN"
     }
     allowed_value: {
       label: "Clientes"
@@ -75,20 +75,28 @@ view: base_saldo_conta_dotz {
       label: "Receita"
       value: "Receita"
     }
+    allowed_value: {
+      label: "TPN por cliente"
+      value: "TPN por cliente"
+    }
+    allowed_value: {
+      label: "Dotz TPV"
+      value: "Dotz TPV"
+    }
   }
 
   measure: dado_dinamico {
     sql:
-      {% if Tipo_dado._parameter_value == "Faturamento" %}
+      {% if Tipo_dado._parameter_value == "TPV" %}
         sum(${TABLE}.Saldo)
-      {% elsif Tipo_dado._parameter_value == "Transacoes" %}
-        0
+      {% elsif Tipo_dado._parameter_value == "TPN" %}
+        null
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
         count(distinct(case when ${TABLE}.Saldo > 0 then ${TABLE}.NuCPF else null end))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
-        0
+        null
       {% else %}
-        sum(${TABLE}.QuantidadeDotzTroca)
+        null
       {% endif %} ;;
     value_format: "#,##0"
   }

@@ -112,12 +112,12 @@ view: transacoes_dotzpay {
   parameter: Tipo_dado {
     type: unquoted
     allowed_value: {
-      label: "Faturamento"
-      value: "Faturamento"
+      label: "TPV"
+      value: "TPV"
     }
     allowed_value: {
-      label: "Transações"
-      value: "Transacoes"
+      label: "TPN"
+      value: "TPN"
     }
     allowed_value: {
       label: "Clientes"
@@ -126,6 +126,14 @@ view: transacoes_dotzpay {
     allowed_value: {
       label: "Receita"
       value: "Receita"
+    }
+    allowed_value: {
+      label: "TPN por cliente"
+      value: "TPN por cliente"
+    }
+    allowed_value: {
+      label: "Dotz TPV"
+      value: "Dotz TPV"
     }
   }
 
@@ -143,16 +151,20 @@ view: transacoes_dotzpay {
 
   measure: dado_dinamico {
     sql:
-      {% if Tipo_dado._parameter_value == "Faturamento" %}
+      {% if Tipo_dado._parameter_value == "TPV" %}
         sum(${TABLE}.Valor)
-      {% elsif Tipo_dado._parameter_value == "Transacoes" %}
+      {% elsif Tipo_dado._parameter_value == "TPN" %}
         sum(${TABLE}.ContagemReversao1)
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
         count(distinct(${TABLE}.ID_CONTA))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         sum(${TABLE}.Receita)
+      {% elsif Tipo_dado._parameter_value == "TPN por cliente" %}
+        sum(${TABLE}.ContagemReversao1)/count(distinct(${TABLE}.ID_CONTA))
+      {% elsif Tipo_dado._parameter_value == "Dotz TPV" %}
+        null
       {% else %}
-        sum(${TABLE}.Valor)
+        null
       {% endif %} ;;
     value_format: "#,##0"
   }

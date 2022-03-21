@@ -154,7 +154,7 @@ view: transacoes_dotzpay {
       {% else %}
         sum(${TABLE}.Valor)
       {% endif %} ;;
-    value_format: "#,##0.00"
+    value_format: "#,##0"
   }
 
   parameter: Teste_data {

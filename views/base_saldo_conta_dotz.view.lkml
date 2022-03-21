@@ -90,7 +90,7 @@ view: base_saldo_conta_dotz {
       {% else %}
         sum(${TABLE}.QuantidadeDotzTroca)
       {% endif %} ;;
-    value_format: "#,##0.00"
+    value_format: "#,##0"
   }
 
 }

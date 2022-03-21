@@ -122,7 +122,7 @@ view: base_trocas_app {
       {% else %}
         sum(${TABLE}.QuantidadeDotzTroca)
       {% endif %} ;;
-    value_format: "#,##0.00"
+    value_format: "#,##0"
   }
 
 }

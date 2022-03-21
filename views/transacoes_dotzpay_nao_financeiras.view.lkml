@@ -82,7 +82,7 @@ view: transacoes_dotzpay_nao_financeiras {
       {% else %}
         0
       {% endif %} ;;
-    value_format: "#,##0.00"
+    value_format: "#,##0"
   }
 
   set: detail {

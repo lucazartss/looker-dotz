@@ -69,11 +69,11 @@ view: transacoes_dotzpay_nao_financeiras {
     }
     allowed_value: {
       label: "TPN por cliente"
-      value: "TPN por cliente"
+      value: "TPNporcliente"
     }
     allowed_value: {
       label: "Dotz TPV"
-      value: "Dotz TPV"
+      value: "DotzTPV"
     }
   }
 

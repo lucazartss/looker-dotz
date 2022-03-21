@@ -129,11 +129,11 @@ view: transacoes_dotzpay {
     }
     allowed_value: {
       label: "TPN por cliente"
-      value: "TPN por cliente"
+      value: "TPNporcliente"
     }
     allowed_value: {
       label: "Dotz TPV"
-      value: "Dotz TPV"
+      value: "DotzTPV"
     }
   }
 
@@ -159,9 +159,9 @@ view: transacoes_dotzpay {
         count(distinct(${TABLE}.ID_CONTA))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         sum(${TABLE}.Receita)
-      {% elsif Tipo_dado._parameter_value == "TPN por cliente" %}
+      {% elsif Tipo_dado._parameter_value == "TPNporcliente" %}
         sum(${TABLE}.ContagemReversao1)/count(distinct(${TABLE}.ID_CONTA))
-      {% elsif Tipo_dado._parameter_value == "Dotz TPV" %}
+      {% elsif Tipo_dado._parameter_value == "DotzTPV" %}
         null
       {% else %}
         null

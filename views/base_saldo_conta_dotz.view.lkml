@@ -77,11 +77,11 @@ view: base_saldo_conta_dotz {
     }
     allowed_value: {
       label: "TPN por cliente"
-      value: "TPN por cliente"
+      value: "TPNporcliente"
     }
     allowed_value: {
       label: "Dotz TPV"
-      value: "Dotz TPV"
+      value: "DotzTPV"
     }
   }
 

@@ -51,4 +51,12 @@ view: base_resumo_executivo_contadotz {
     type: count
     drill_fields: []
   }
+
+  dimension: valor_ajustado {
+    type: number
+    sql: case when ${TABLE}.natureza_transacao in ("Cartao Fisico","Cartao Virtual","QRCode","Compra Creditos","Recarga Celular","Pagamento de Contas",
+                                                  "Saida Transferencia Bancaria","P2P Saida","PIX Enviado","Saque Cartao Elo")
+              then ${TABLE}.Valor*-1
+              else ${TABLE}.Valor;;
+  }
 }

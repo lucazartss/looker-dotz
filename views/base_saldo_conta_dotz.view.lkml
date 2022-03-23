@@ -22,6 +22,11 @@ view: base_saldo_conta_dotz {
     sql: ${TABLE}.ChaveCliente ;;
   }
 
+  dimension: id_conta {
+    type: number
+    sql: ${TABLE}.ID_CONTA ;;
+  }
+
   dimension_group: data_fechamento_mes {
     type: time
     timeframes: [

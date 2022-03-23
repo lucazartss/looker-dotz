@@ -26,3 +26,4 @@ explore: base_trocas_app {}
 explore: base_saldo_conta_dotz {}
 explore: transacoes_dotzpay_nao_financeiras {}
 explore: base_metas_payments_2022s1 {}
+explore: base_resumo_executivo_contadotz {}

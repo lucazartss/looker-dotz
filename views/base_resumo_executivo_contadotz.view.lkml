@@ -59,4 +59,53 @@ view: base_resumo_executivo_contadotz {
               then ${TABLE}.Valor*-1
               else ${TABLE}.Valor;;
   }
+
+  parameter: Tipo_dado {
+    type: unquoted
+    allowed_value: {
+      label: "TPV"
+      value: "TPV"
+    }
+    allowed_value: {
+      label: "TPN"
+      value: "TPN"
+    }
+    allowed_value: {
+      label: "Clientes"
+      value: "Clientes"
+    }
+    allowed_value: {
+      label: "Receita"
+      value: "Receita"
+    }
+    allowed_value: {
+      label: "TPN por cliente"
+      value: "TPNporcliente"
+    }
+    allowed_value: {
+      label: "Dotz TPV"
+      value: "DotzTPV"
+    }
+  }
+
+  measure: dado_dinamico {
+    sql:
+      {% if Tipo_dado._parameter_value == "TPV" %}
+        sum(${valor_ajustado})
+      {% elsif Tipo_dado._parameter_value == "TPN" %}
+        sum(${TABLE}.QtdTransacao)
+      {% elsif Tipo_dado._parameter_value == "Clientes" %}
+        count(distinct(${TABLE}.ID_CONTA))
+      {% elsif Tipo_dado._parameter_value == "Receita" %}
+        sum(${TABLE}.Receita)
+      {% elsif Tipo_dado._parameter_value == "TPNporcliente" %}
+        null
+      {% elsif Tipo_dado._parameter_value == "DotzTPV" %}
+        null
+      {% else %}
+        null
+      {% endif %} ;;
+    value_format: "#,##0"
+  }
+
 }

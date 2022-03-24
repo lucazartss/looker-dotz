@@ -105,7 +105,7 @@ view: base_resumo_executivo_contadotz {
         count(distinct(case when ${TABLE}.natureza_transacao in ("Saldo") then null else ${TABLE}.ID_CONTA end))
         --sum(${TABLE}.QtdTransacao)/count(distinct(${TABLE}.ID_CONTA))
       {% elsif Tipo_dado._parameter_value == "DotzTPV" %}
-        null
+        sum(case when ${TABLE}.natureza_transacao in ("Trocas catalogo") then ${TABLE}.Valor else null end)
       {% else %}
         null
       {% endif %} ;;

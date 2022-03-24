@@ -101,7 +101,7 @@ view: base_resumo_executivo_contadotz {
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         sum(${TABLE}.Receita)
       {% elsif Tipo_dado._parameter_value == "TPNporcliente" %}
-        null
+        sum(${TABLE}.QtdTransacao)/count(distinct(${TABLE}.ID_CONTA))
       {% elsif Tipo_dado._parameter_value == "DotzTPV" %}
         null
       {% else %}

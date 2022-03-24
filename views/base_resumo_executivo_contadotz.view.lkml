@@ -54,7 +54,7 @@ view: base_resumo_executivo_contadotz {
 
   dimension: valor_ajustado {
     type: number
-    sql: case when ${TABLE}.modalidade in ("Cartao Fisico","Cartao Virtual","QRCode","Compra Creditos","Recarga Celular","Pagamento de Contas",
+    sql: case when ${TABLE}.modalidade in ("Cartao Fisico","Cartao Virtual","QRcode","Compra Creditos","Recarga Celular","Pagamento de Contas",
                                                   "Saida Transferencia Bancaria","P2P Saida","PIX Enviado","Saque Cartao Elo")
               then (${TABLE}.Valor)*-1
               else ${TABLE}.Valor END;;

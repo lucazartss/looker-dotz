@@ -57,7 +57,9 @@ view: base_resumo_executivo_contadotz {
     sql: case when ${TABLE}.modalidade in ("Cartao Fisico","Cartao Virtual","QRcode","Compra Creditos","Recarga Celular","Pagamento de Contas",
                                                   "Saida Transferencia Bancaria","P2P Saida","PIX Enviado","Saque Cartao Elo")
               then (${TABLE}.Valor)*-1
-              else ${TABLE}.Valor END;;
+              when ${TABLE}.modalidade in ("Conversao","P2P Entrada","PIX Recebido","Recarga Boleto")
+              then ${TABLE}.Valor
+              else null END;;
   }
 
   parameter: Tipo_dado {

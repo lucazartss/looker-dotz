@@ -97,7 +97,8 @@ view: base_resumo_executivo_contadotz {
       {% elsif Tipo_dado._parameter_value == "TPN" %}
         sum(${TABLE}.QtdTransacao)
       {% elsif Tipo_dado._parameter_value == "Clientes" %}
-        count(distinct(${TABLE}.ID_CONTA))
+      count(distinct(case when ${TABLE}.natureza_transacao in ("Saldo") then null else ${TABLE}.ID_CONTA end))
+        --count(distinct(${TABLE}.ID_CONTA))
       {% elsif Tipo_dado._parameter_value == "Receita" %}
         sum(${TABLE}.Receita)
       {% elsif Tipo_dado._parameter_value == "TPNporcliente" %}

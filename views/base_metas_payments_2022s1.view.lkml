@@ -64,7 +64,7 @@ view: base_metas_payments_2022s1 {
     sql:
       case
         when ${TABLE}.Visao = "Mensal" then ${data_month}
-        when ${TABLE}.Visao = "Semanal" then ${data_week}
+        when ${TABLE}.Visao = "Semanal" then ${data_date}
         else null end;;
   }
 

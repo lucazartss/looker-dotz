@@ -23,7 +23,7 @@ explore: vw_fato_extrato_cubo {
 
   join: vw_dim_filial_parceiro {
     view_label: "Filial Parceiro"
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${vw_fato_extrato_cubo.chave_filial_parceiro}=${vw_dim_filial_parceiro.chave_filial_parceiro} and
       ${vw_fato_extrato_cubo.chave_parceiro}=${vw_dim_filial_parceiro.chave_parceiro};;
@@ -36,19 +36,19 @@ explore: vw_fato_extrato_cubo {
           # }
           join: vw_dim_parceiro {
             view_label: "Parceiro"
-            type: left_outer
+            type: inner
             relationship: many_to_one
             sql_on: ${vw_dim_filial_parceiro.chave_parceiro}=${vw_dim_parceiro.chave_parceiro} ;;
           }
   join: vw_dim_hierarquia_regional {
     view_label: "Hierarquia Regional"
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${vw_fato_extrato_cubo.chave_hierarquia_regional}=${vw_dim_hierarquia_regional.chave_hierarquia_regional} ;;
   }
   join: vw_dim_produto_credito {
     view_label: "Produto de Crédito"
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${vw_fato_extrato_cubo.chave_produto_credito}=${vw_dim_produto_credito.chave_produto_credito} ;;
   }
@@ -60,13 +60,13 @@ explore: vw_fato_extrato_cubo {
             }
   join: vw_dim_promocao {
     view_label: "Promocão"
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${vw_fato_extrato_cubo.chave_promocao}=${vw_dim_promocao.chave_promocao} ;;
   }
   join: vw_dim_tipo_transacao_credito {
     view_label: "Tipo de Transação"
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${vw_fato_extrato_cubo.chave_tipo_transacao_credito}=${vw_dim_tipo_transacao_credito.chave_tipo_transacao_credito} ;;
   }

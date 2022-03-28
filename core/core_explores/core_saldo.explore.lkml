@@ -10,13 +10,13 @@ explore: vw_fato_cliente {
 
   join: vw_dim_cliente_cubo {
     view_label: "Cliente"
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${vw_fato_cliente.chave_cliente}=${vw_dim_cliente_cubo.chave_cliente} ;;
   }
           join: vw_dim_hierarquia_regional {
             view_label: "Hierarquia Regional"
-            type: left_outer
+            type: inner
             relationship: many_to_one
             sql_on: ${vw_dim_cliente_cubo.chave_hierarquia_regional}=${vw_dim_hierarquia_regional.chave_hierarquia_regional} ;;
           }

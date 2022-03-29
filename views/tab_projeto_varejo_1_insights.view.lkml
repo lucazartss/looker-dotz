@@ -91,6 +91,32 @@ view: tab_projeto_varejo_1_insights {
     sql: ${TABLE}.PERIODO ;;
   }
 
+  measure: navigation_bar {
+
+    type: count
+
+    html:
+
+    <nav style="font-size: 12px; padding: 5px 10px 0 10px; height: 20px;">
+
+     <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #c8c8c8;" href="/dashboards/22?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>Faturamento visão clientes DZ
+
+
+    <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="https://dotz.com"/>Frequência compra/ticket
+
+    <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="https://dotz.com"/>Gasto médio
+
+    <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="https://dotz.com"/>Clientes inativos
+
+    <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="https://dotz.com"/>Potencial novos clientes
+
+    <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="https://dotz.com"/>Categorias
+    </nav>
+
+    ;;
+
+    }
+
   set: detail {
     fields: [
       nome_parceiro,

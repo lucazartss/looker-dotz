@@ -35,7 +35,12 @@ explore: fato_extrato {}
 explore: dim_cliente{}
 explore: painel_cb_safras_bv {}
 explore: dim_origem_troca {}
-explore: tab_projeto_varejo_1_insights {}
+explore: tab_projeto_varejo_1_insights {
+  access_filter: {
+    field: nome_parceiro
+    user_attribute: parceiro
+  }
+}
 explore: base_sku_final5 {}
 explore: tabela_dash_varejo {}
 explore: info_provar_valor_diario {}

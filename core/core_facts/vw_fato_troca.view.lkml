@@ -242,6 +242,126 @@ view: vw_fato_troca {
     drill_fields: []
   }
 
+  ##########-------------------------------DIMENSIONS---------------------------------##########
+
+  dimension: custo_troca {
+    type: number
+    sql: IFNULL(${valor_frete_real},0+IFNULL(${valor_preco_real},0) ;;
+  }
+
+  dimension: valor_real_total_troca {
+    type: number
+    sql: ${valor_frete_real}+${valor_preco_real} ;;
+  }
+
+  dimension: cpd_real {
+    type: number
+    sql: ${valor_real_total_troca}/NULLIFF(${quantidade_dotz_troca},0) ;;
+  }
+
+  dimension: valor_estimado_total_troca {
+    type: number
+    sql: ${valor_frete_estimado}+${valor_preco_estimado} ;;
+  }
+
+  ##########################################MEASURES#####################################
+
+  measure: total_qtd_dotz_troca {
+    type: sum
+    sql: ${quantidade_dotz_troca} ;;
+  }
+
+  measure: total_valor_frete_real {
+    type: sum
+    sql: ${valor_frete_real} ;;
+  }
+
+  measure: total_valor_preco_real {
+    type: sum
+    sql: ${valor_preco_real} ;;
+  }
+
+  measure: total_valor_tarifa_total {
+    type: sum
+    sql: ${valor_tarifa_total} ;;
+  }
+
+  measure: total_valor_tarifa {
+    type: sum
+    sql: ${valor_tarifa} ;;
+  }
+
+  measure: total_valor_site {
+    type: sum
+    sql: ${valor_site} ;;
+  }
+
+  measure: total_valor_range_reais {
+    type: sum
+    sql: ${valor_range_reais} ;;
+  }
+
+  measure: total_valor_range_custo {
+    type: sum
+    sql: ${valor_range_custo} ;;
+  }
+
+  measure: total_valor_preco_minimo {
+    type: sum
+    sql: ${valor_preco_minimo} ;;
+  }
+
+  measure: total_valor_preco_medio {
+    type: sum
+    sql: ${valor_preco_medio} ;;
+  }
+
+  measure: total_valor_preco_maximo {
+    type: sum
+    sql: ${valor_preco_maximo} ;;
+  }
+
+  measure: total_valor_dotz {
+    type: sum
+    sql: ${valor_dotz} ;;
+  }
+
+  measure: total_qtd_dias_entrega {
+    type: sum
+    sql: ${quantidade_dias_entrega} ;;
+  }
+
+
+
+
+  measure: percent_frete {
+    label: "% Frete"
+    type: sum
+    sql: ${valor_frete_real}/NULLIF(${valor_preco_real},0) ;;
+    value_format_name: percent_2
+  }
+
+  measure: cpd {
+    label: "CPD"
+    type: number
+    sql: ${custo_troca}/NULLIF(${total_qtd_dotz_troca},0) ;;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   set: set_chaves {
     fields: [
               chave_categoria_produto_troca,

@@ -86,6 +86,11 @@ view: tab_projeto_varejo_1_insights {
     sql: ${TABLE}.MEDIA_FREQ_TOTAL ;;
   }
 
+  dimension: periodo {
+    type: string
+    sql: ${TABLE}.PERIODO ;;
+  }
+
   set: detail {
     fields: [
       nome_parceiro,

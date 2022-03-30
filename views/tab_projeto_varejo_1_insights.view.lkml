@@ -100,9 +100,9 @@ view: tab_projeto_varejo_1_insights {
     <div>
       <nav style="font-size: 12px; padding: 5px 10px 0 10px; height: 20px;width:100%;position:relative;">
 
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>Faturamento visão clientes DZ
+      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>Faturamento visão clientes DZ
 
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>Frequência compra/ticket
+      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>Frequência compra/ticket
 
       <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #f4f4f4;" href="https://dotz.com"/>Gasto médio
 
@@ -115,6 +115,61 @@ view: tab_projeto_varejo_1_insights {
     <div>
 
     ;;
+
+    }
+
+  measure: navigation_bar2 {
+
+    type: count
+
+    html:
+
+    <html>
+
+      <head>
+          <style>
+              nav {
+                  border: 1px;
+                  background-color: green;
+                  color: white;
+                  padding: 6px;
+              }
+
+              a {
+                  text-decoration: none;
+                  color: white;
+                  font-size: 20px;
+              }
+          </style>
+      </head>
+
+      <body>
+          <h1>GeeksforGeeks</h1>
+          <h2>HTML nav Tag</h2>
+          <!-- nav tag starts -->
+          <nav style="nav">
+              <a href=
+      "https://www.geeksforgeeks.org/">
+                      Home</a> |
+              <a href=
+      "https://www.geeksforgeeks.org/company-interview-corner/">
+                      Interview</a> |
+              <a href=
+      "https://www.geeksforgeeks.org/gate-cs-notes-gq/">
+                      Gate</a> |
+              <a href=
+      "https://www.geeksforgeeks.org/data-structures/">
+                      Data Structure</a> |
+              <a href=
+      "https://www.geeksforgeeks.org/fundamentals-of-algorithms/">
+                      Algorithm</a>
+          </nav>
+          <!-- nav tag ends -->
+      </body>
+
+      </html>
+
+        ;;
 
     }
 

@@ -41,8 +41,18 @@ explore: tab_projeto_varejo_1_insights {
     user_attribute: parceiro
   }
 }
-explore: base_sku_final5 {}
-explore: tabela_dash_varejo {}
+explore: base_sku_final5 {
+  access_filter: {
+    field: nome_parceiro
+    user_attribute: parceiro
+  }
+}
+explore: tabela_dash_varejo {
+  access_filter: {
+    field: nome_parceiro
+    user_attribute: parceiro
+  }
+}
 explore: info_provar_valor_diario {}
 explore: info_provar_valor_mes {}
 explore: analise_clientes_produto_consolidado {}

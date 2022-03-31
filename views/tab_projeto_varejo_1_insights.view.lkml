@@ -91,80 +91,27 @@ view: tab_projeto_varejo_1_insights {
     sql: ${TABLE}.PERIODO ;;
   }
 
-  measure: navigation_bar {
-
-    type: count
-
-    html:
-
-    <div>
-      <nav style="font-size: 12px; padding: 5px 10px 0 10px; height: 20px;width:100%;position:relative;">
-
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #eaeaea;" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>Faturamento visão clientes DZ
-
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #eaeaea;" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>Frequência compra/ticket
-
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #eaeaea;" href="https://dotz.com"/>Gasto médio
-
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #eaeaea;" href="https://dotz.com"/>Clientes inativos
-
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #eaeaea;" href="https://dotz.com"/>Potencial novos clientes
-
-      <a style="padding: 5px 15px; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; border-radius: 10px 10px 0 0; float: left; line-height: 40px; font-weight: bold; color: #3d3d3d; background-color: #eaeaea;" href="https://dotz.com"/>Categorias
-      </nav>
-    <div>
-
-    ;;
-
-    }
-
   measure: navigation_bar2 {
 
     type: count
 
     html:
-      <nav>
+      <nav "font-size: 14px; padding: 5px 5px 0 10px; height: 20px;width:100%;position:relative;">
 
-      <a role="button" class="btn btn-default" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">1. Faturamento visão clientes DZ</a>
+      <a style="padding: 15px 15px; border-bottom: solid 1px #c8c8c8; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; line-height: 40px; color: #3d3d3d; background-color: #eaeaea;font-size:16px;" role="button" class="btn btn-default btn-sm" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">1. Faturamento visão clientes DZ</a>
 
-      <a role="button" class="btn btn-default" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">2. Frequência compra/ticket</a>
+      <a style="padding: 15px 15px; border-bottom: solid 1px #c8c8c8; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; line-height: 40px; color: #3d3d3d; background-color: #eaeaea;font-size:16px;" role="button" class="btn btn-default" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">2. Frequência compra/ticket</a>
 
-      <a role="button" class="btn btn-default" href="/embed/dashboards/33?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">3. Gasto médio</a>
+      <a style="padding: 15px 15px; border-bottom: solid 1px #c8c8c8; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; line-height: 40px; color: #3d3d3d; background-color: #eaeaea;font-size:16px;" role="button" class="btn btn-default" href="/embed/dashboards/33?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">3. Gasto médio</a>
 
-      <a role="button" class="btn btn-default" href="/embed/dashboards/35?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">4. Clientes inativos</a>
+      <a style="padding: 15px 15px; border-bottom: solid 1px #c8c8c8; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; line-height: 40px; color: #3d3d3d; background-color: #eaeaea;font-size:16px;" role="button" class="btn btn-default" href="/embed/dashboards/35?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">4. Clientes inativos</a>
 
-      <a role="button" class="btn btn-default" href="/embed/dashboards/34?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">5. Potencial novos clientes</a>
+      <a style="padding: 15px 15px; border-bottom: solid 1px #c8c8c8; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; line-height: 40px; color: #3d3d3d; background-color: #eaeaea;font-size:16px;" role="button" class="btn btn-default" href="/embed/dashboards/34?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">5. Potencial novos clientes</a>
 
-      <a role="button" class="btn btn-default" href="/embed/dashboards/36?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">6. Categorias</a>
+      <a style="padding: 15px 15px; border-bottom: solid 1px #c8c8c8; border-top: solid 1px #c8c8c8; border-left: solid 1px #c8c8c8; border-right: solid 1px #c8c8c8; line-height: 40px; color: #3d3d3d; background-color: #eaeaea;font-size:16px;" role="button" class="btn btn-default" href="/embed/dashboards/36?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">6. Categorias</a>
 
       </nav>
         ;;
-
-    }
-
-  measure: navigation_bar3 {
-
-    type: count
-
-    html:
-
-      <nav>
-
-      <a role="button" class="btn" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">1. Faturamento visão clientes DZ</a>
-
-      <a role="button" class="btn" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">2. Frequência compra/ticket</a>
-
-      <a role="button" class="btn" href="/embed/dashboards/33?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">3. Gasto médio</a>
-
-      <a role="button" class="btn" href="/embed/dashboards/35?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">4. Clientes inativos</a>
-
-      <a role="button" class="btn" href="/embed/dashboards/34?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">5. Potencial novos clientes</a>
-
-      <a role="button" class="btn" href="/embed/dashboards/36?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">6. Categorias</a>
-
-      </nav>
-
-      ;;
 
   }
 

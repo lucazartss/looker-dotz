@@ -125,17 +125,17 @@ view: tab_projeto_varejo_1_insights {
     html:
       <nav>
 
-      <a type="button" class="btn btn-default" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>1. Faturamento visão clientes DZ
+      <a role="button" class="btn btn-default" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">1. Faturamento visão clientes DZ</a>
 
-      <a type="button" class="btn btn-default" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>2. Frequência compra/ticket
+      <a role="button" class="btn btn-default" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">2. Frequência compra/ticket</a>
 
-      <a type="button" class="btn btn-default" href="/embed/dashboards/33?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>3. Gasto médio
+      <a role="button" class="btn btn-default" href="/embed/dashboards/33?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">3. Gasto médio</a>
 
-      <a type="button" class="btn btn-default" href="/embed/dashboards/35?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>4. Clientes inativos
+      <a role="button" class="btn btn-default" href="/embed/dashboards/35?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">4. Clientes inativos</a>
 
-      <a type="button" class="btn btn-default" href="/embed/dashboards/34?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>5. Potencial novos clientes
+      <a role="button" class="btn btn-default" href="/embed/dashboards/34?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">5. Potencial novos clientes</a>
 
-      <a type="button" class="btn btn-default" href="/embed/dashboards/36?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>6. Categorias
+      <a role="button" class="btn btn-default" href="/embed/dashboards/36?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self">6. Categorias</a>
 
       </nav>
         ;;

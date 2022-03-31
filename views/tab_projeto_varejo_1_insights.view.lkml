@@ -123,55 +123,48 @@ view: tab_projeto_varejo_1_insights {
     type: count
 
     html:
+      <nav>
 
-    <html>
+      <a class="btn btn-default" href="/embed/dashboards/21?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>1. Faturamento visão clientes DZ
 
-      <head>
-          <style>
-              nav {
-                  border: 1px;
-                  background-color: green;
-                  color: white;
-                  padding: 6px;
-              }
+      <a class="btn btn-default" href="/embed/dashboards/30?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>2. Frequência compra/ticket
 
-              a {
-                  text-decoration: none;
-                  color: white;
-                  font-size: 20px;
-              }
-          </style>
-      </head>
+      <a class="btn btn-default" href="/embed/dashboards/33?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>3. Gasto médio
 
-      <body>
-          <h1>GeeksforGeeks</h1>
-          <h2>HTML nav Tag</h2>
-          <!-- nav tag starts -->
-          <nav style="nav">
-              <a href=
-      "https://www.geeksforgeeks.org/">
-                      Home</a> |
-              <a href=
-      "https://www.geeksforgeeks.org/company-interview-corner/">
-                      Interview</a> |
-              <a href=
-      "https://www.geeksforgeeks.org/gate-cs-notes-gq/">
-                      Gate</a> |
-              <a href=
-      "https://www.geeksforgeeks.org/data-structures/">
-                      Data Structure</a> |
-              <a href=
-      "https://www.geeksforgeeks.org/fundamentals-of-algorithms/">
-                      Algorithm</a>
-          </nav>
-          <!-- nav tag ends -->
-      </body>
+      <a class="btn btn-default" href="/embed/dashboards/35?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>4. Clientes inativos
 
-      </html>
+      <a class="btn btn-default" href="/embed/dashboards/34?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>5. Potencial novos clientes
 
+      <a class="btn btn-default" href="/embed/dashboards/36?Periodo={{_filters['tab_projeto_varejo_1_insights.periodo']}}&Parceiro={{_filters['tab_projeto_varejo_1_insights.nome_parceiro']}}" target="_self"/>6. Categorias
+
+      </nav>
         ;;
 
     }
+
+  measure: navigation_bar3 {
+
+    type: count
+
+    html:
+
+      <hr>
+
+      <div class="vis-single-value">
+
+      <div class="btn-group btn-group-sm">
+
+      <a type="button" class="btn btn-primary btn-lg btn-block">Text goes here</a>
+
+      <a href="path to next 'tab' in the dash here" class="btn btn-primary">Text goes here</a>
+
+      #Add as many new <a href ... lines as you like for more tabs!
+
+      </div>
+
+      ;;
+
+  }
 
   set: detail {
     fields: [

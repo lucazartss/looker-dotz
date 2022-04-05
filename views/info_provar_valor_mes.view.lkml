@@ -4,10 +4,7 @@ view: info_provar_valor_mes {
       ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [detail*]
-  }
+  # DIMENSIONS ----------------------------------------------------------------------------------------------------------------------------------------------------
 
   dimension: nomeparceiro {
     type: string
@@ -74,6 +71,64 @@ view: info_provar_valor_mes {
     type: number
     sql: ${TABLE}.Faturamento_total ;;
   }
+
+# MEASURES ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+  measure: count {
+    type: count
+    drill_fields: [detail*]
+  }
+
+  measure: sum_fat_dotz {
+    type: sum
+    sql:
+    round(${fat_dotz_parceiro},0) ;;
+  }
+
+  measure: sum_fat_total {
+    type: sum
+    sql:
+    round(${faturamento_total},0) ;;
+  }
+
+# PERSONALIZED DIMENSIONS ----------------------------------------------------------------------------------------------------------------------------------------
+
+  measure: faturamento_card {
+
+    type: count
+
+    html: <div class="vis">
+
+      <div class="vis-single-value" style="font-size:18px; background-color: #f56700; color:#ffffff">
+
+      <table>
+        <tr>
+          <th></th>
+          <th>ATUAL</th>
+
+        </tr>
+        <tr>
+          <th>Faturamento com Dotz&nbsp;&nbsp;&nbsp;</th>
+          <td>R$ {{ info_provar_valor_mes.sum_fat_dotz._rendered_value }}</td>
+        </tr>
+        <tr>
+          <th>Faturamento Total&nbsp;&nbsp;&nbsp;</th>
+          <td>R$ {{ info_provar_valor_mes.faturamento_total._rendered_value }}</td>
+        </tr>
+        <tr>
+        <th>Penetração&nbsp;&nbsp;&nbsp;</th>
+        <td>{{ info_provar_valor_mes.count._rendered_value }}</td>
+        </tr>
+      </table>
+
+      </div>
+
+      </div>
+
+      ;;
+  }
+
+ # FIELD SETS ----------------------------------------------------------------------------------------------------------------------------------------------------
 
   set: detail {
     fields: [

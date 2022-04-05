@@ -19,9 +19,9 @@ view: info_provar_valor_mes {
     sql: ${TABLE}.chaveparceiro ;;
   }
 
-  dimension: data {
-    type: date
-    datatype: date
+  dimension_group: data {
+    type: time
+    timeframes: [date,day_of_month,day_of_week,week,year,month]
     sql: ${TABLE}.DATA ;;
   }
 
@@ -79,7 +79,12 @@ view: info_provar_valor_mes {
     fields: [
       nomeparceiro,
       chaveparceiro,
-      data,
+      data_date,
+      data_day_of_month,
+      data_day_of_week,
+      data_week,
+      data_month,
+      data_year,
       clientes_acumulo,
       dotz_acumulado,
       fat_dotz_parceiro,

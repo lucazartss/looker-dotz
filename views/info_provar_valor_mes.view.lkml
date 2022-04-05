@@ -82,13 +82,15 @@ view: info_provar_valor_mes {
   measure: sum_fat_dotz {
     type: sum
     sql:
-    round(${fat_dotz_parceiro},0) ;;
+    round(${fat_dotz_parceiro},0)
+    ;;
   }
 
   measure: sum_fat_total {
     type: sum
     sql:
-    round(${faturamento_total},0) ;;
+    round(${faturamento_total},0)
+    ;;
   }
 
 # PERSONALIZED DIMENSIONS ----------------------------------------------------------------------------------------------------------------------------------------

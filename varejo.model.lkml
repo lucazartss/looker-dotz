@@ -35,12 +35,22 @@ explore: fato_extrato {}
 explore: dim_cliente{}
 explore: painel_cb_safras_bv {}
 explore: dim_origem_troca {}
+
 explore: tab_projeto_varejo_1_insights {
   access_filter: {
     field: nome_parceiro
     user_attribute: parceiro
   }
 }
+
+explore: dash_varejo_sku3 {
+  access_filter: {
+    field: nome_parceiro
+    user_attribute: parceiro
+  }
+}
+
+
 explore: base_sku_final5 {
   access_filter: {
     field: nome_parceiro
@@ -53,8 +63,19 @@ explore: tabela_dash_varejo {
     user_attribute: parceiro
   }
 }
-explore: info_provar_valor_diario {}
-explore: info_provar_valor_mes {}
+explore: info_provar_valor_diario {
+  access_filter: {
+    field: nomeparceiro
+    user_attribute: parceiro
+  }
+}
+
+explore: info_provar_valor_mes {
+  access_filter: {
+    field: nomeparceiro
+    user_attribute: parceiro
+  }
+}
 explore: analise_clientes_produto_consolidado {}
 
 # explore: media {}

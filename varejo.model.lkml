@@ -50,6 +50,12 @@ explore: dash_varejo_sku3 {
   }
 }
 
+explore: dash_varejo_sku4a {
+  access_filter: {
+    field: nome_parceiro
+    user_attribute: parceiro
+  }
+}
 
 explore: base_sku_final5 {
   access_filter: {
